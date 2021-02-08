@@ -1,0 +1,350 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from django.db import models
+
+
+class AccountAccess(models.Model):
+    accessid = models.CharField(primary_key=True, max_length=5)
+    accname = models.CharField(max_length=25)
+    accdescription = models.CharField(max_length=100)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'account_access'
+
+
+class AccountBa(models.Model):
+    baid = models.CharField(primary_key=True, max_length=10)
+    bacode = models.CharField(max_length=5)
+    baname = models.CharField(max_length=30)
+    bacontactname = models.CharField(max_length=30)
+    email = models.CharField(max_length=50)
+    mobileno = models.CharField(max_length=15)
+    status = models.CharField(max_length=50)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'account_ba'
+
+
+class AccountCustomer(models.Model):
+    custid = models.CharField(primary_key=True, max_length=10)
+    custcode = models.CharField(max_length=5)
+    custname = models.CharField(max_length=30)
+    custcontactname = models.CharField(max_length=30)
+    email = models.CharField(max_length=50)
+    mobileno = models.CharField(max_length=15)
+    status = models.CharField(max_length=50)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'account_customer'
+
+
+class AccountUser(models.Model):
+    userid = models.CharField(primary_key=True, max_length=15)
+    firstname = models.CharField(max_length=15)
+    lastname = models.CharField(max_length=15)
+    mobileno = models.CharField(max_length=10)
+    worklocation = models.CharField(max_length=20)
+    status = models.CharField(max_length=5)
+    version = models.CharField(max_length=10)
+    password = models.CharField(max_length=15)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'account_user'
+
+
+class AccountUseraccess(models.Model):
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    access = models.ForeignKey(AccountAccess, models.DO_NOTHING)
+    location = models.ForeignKey('LocationOperationlocation', models.DO_NOTHING)
+    user = models.ForeignKey(AccountUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'account_useraccess'
+
+
+class AccountUserlocationcustomer(models.Model):
+    ulcpkey = models.CharField(primary_key=True, max_length=10)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    customer = models.ForeignKey(AccountCustomer, models.DO_NOTHING)
+    location = models.ForeignKey('LocationOperationlocation', models.DO_NOTHING)
+    user = models.ForeignKey(AccountUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'account_userlocationcustomer'
+
+
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=80)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+
+class AuthGroupPermissions(models.Model):
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
+
+
+class AuthPermission(models.Model):
+    name = models.CharField(max_length=255)
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
+
+
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.IntegerField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+
+class AuthUserGroups(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
+
+
+class AuthUserUserPermissions(models.Model):
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
+
+
+class ContractContract(models.Model):
+    contractid = models.IntegerField(primary_key=True)
+    contractwith = models.CharField(max_length=5)
+    cost = models.FloatField()
+    oppourtunityid = models.CharField(max_length=20, blank=True, null=True)
+    vertical = models.IntegerField()
+    bonus = models.IntegerField()
+    bonusduration = models.CharField(max_length=10)
+    startdate = models.DateField()
+    enddate = models.DateField()
+    closedate = models.DateField()
+    extenddate = models.DateField()
+    approvedby = models.CharField(max_length=45)
+    approvestatus = models.SmallIntegerField()
+    remark = models.CharField(max_length=200)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    contracttype = models.ForeignKey('ContractContracttype', models.DO_NOTHING)
+    locationcust = models.ForeignKey(AccountUserlocationcustomer, models.DO_NOTHING)
+    relatedcontract = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'contract_contract'
+
+
+class ContractContractdetail(models.Model):
+    contractdetid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    requirequantity = models.IntegerField()
+    startquantity = models.IntegerField()
+    endquantity = models.IntegerField()
+    uom = models.IntegerField()
+    upperdev = models.FloatField()
+    lowerdev = models.FloatField()
+    ratetype = models.CharField(max_length=5)
+    fixedcost = models.FloatField()
+    margintype = models.CharField(max_length=5)
+    marginvalue = models.FloatField()
+    isapplicablecomrange = models.SmallIntegerField()
+    billingcycle = models.IntegerField()
+    finalsubmissionflag = models.SmallIntegerField()
+    remark = models.CharField(max_length=200)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    contacttype = models.ForeignKey('ContractContracttype', models.DO_NOTHING)
+    contract = models.ForeignKey(ContractContract, models.DO_NOTHING)
+    skilllevel = models.ForeignKey('ContractSkilllevel', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'contract_contractdetail'
+
+
+class ContractContracttype(models.Model):
+    contracttypeid = models.IntegerField(primary_key=True)
+    cnttypename = models.CharField(max_length=30)
+    cnttypecode = models.CharField(max_length=5)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'contract_contracttype'
+
+
+class ContractSkilllevel(models.Model):
+    skillid = models.IntegerField(primary_key=True)
+    skillname = models.CharField(max_length=30)
+    skillcode = models.CharField(max_length=5)
+    skilllevel = models.CharField(max_length=2)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'contract_skilllevel'
+
+
+class DjangoAdminLog(models.Model):
+    action_time = models.DateTimeField()
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.PositiveSmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
+class DjangoMigrations(models.Model):
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_session'
+
+
+class LocationCity(models.Model):
+    cityid = models.IntegerField(primary_key=True)
+    citycode = models.CharField(max_length=5)
+    cityname = models.CharField(max_length=25)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    citystate = models.ForeignKey('LocationState', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'location_city'
+
+
+class LocationOperationlocation(models.Model):
+    oplocationid = models.IntegerField(primary_key=True)
+    oploccode = models.CharField(unique=True, max_length=7)
+    oploclat = models.FloatField()
+    oploclong = models.FloatField()
+    oplocaddress = models.TextField()
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+    oploccity = models.ForeignKey(LocationCity, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'location_operationlocation'
+
+
+class LocationState(models.Model):
+    stateid = models.IntegerField(primary_key=True)
+    statecode = models.CharField(max_length=5)
+    statename = models.CharField(max_length=25)
+    statecountry = models.CharField(max_length=30)
+    created = models.DateTimeField()
+    createdby = models.CharField(max_length=20)
+    updated = models.DateTimeField()
+    updatedby = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'location_state'

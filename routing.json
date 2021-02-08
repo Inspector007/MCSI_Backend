@@ -1,0 +1,151 @@
+{
+	"customerID": 234234,
+	"siteId": 1234,
+	"shiftId": 4563,
+	"shiftType": "CST",
+	"siteLat": "18.9404",
+	"siteLong": "72.8339",
+	"availableVehicles": [{
+			"type": "SUV",
+			"totalCount": 25,
+			"seatingCapacity": 5,
+			"avgSpeed": 80
+		},
+		{
+			"type": "TT",
+			"totalCount": 5,
+			"seatingCapacity": 30,
+			"avgSpeed": 50
+		},
+		{
+			"type": "HB",
+			"totalCount": 5,
+			"seatingCapacity": 5,
+			"avgSpeed": 30
+		},
+		{
+			"type": "MV",
+			"totalCount": 5,
+			"seatingCapacity": 5,
+			"avgSpeed": 50
+		}
+	],
+	"employees": [{
+				"empId": 11,
+				"empName": "Andheri",
+				"lat": "19.1136",
+				"long": "72.8697",
+				"gender": "M",
+				"special": "Yes"
+		},
+		{
+			"empId": 12,
+			"empName": "Jogeshwari",
+			"lat": "19.1439",
+			"long": "72.8428",
+			"gender": "M",
+			"special": "Yes"
+		},
+		{
+			"empId": 13,
+			"empName": "Ram Mandir",
+			"lat": "18.9696",
+			"long": "72.8194",
+			"gender": "M",
+			"special": "Yes"
+		},
+		{
+			"empId": 14,
+			"empName": "Goregaon",
+			"lat": "19.1663",
+			"long": "72.8526",
+			"gender": "M",
+			"special": "Yes"
+		},
+		{
+			"empId": 15,
+			"empName": "Malad",
+			"lat": "19.1874",
+			"long": "72.8484",
+			"gender": "M",
+			"special": "Yes"
+		},
+		{
+			"empId": 16,
+			"empName": "Kandivali",
+			"lat": "18.9518",
+			"long": "72.8184",
+			"gender": "M",
+			"special": "Yes"
+		}
+	],
+	"guards": [{
+			"guardId": 21,
+			"guardName": "A",
+			"gender": "M"
+		},
+		{
+			"guardId": 22,
+			"guardName": "B",
+			"gender": "M"
+		},
+		{
+			"guardId": 23,
+			"guardName": "C",
+			"gender": "M"
+		},
+		{
+			"guardId": 24,
+			"guardName": "D",
+			"gender": "M"
+		}
+	],
+	"constraints": [{
+			"type": "guard",
+			"conditions": [{
+					"for": "F",
+					"event": "drop",
+					"when": "last"
+				},
+				{
+					"for": "F",
+					"event": "pickup",
+					"when": "first"
+				},
+				{
+					"for": "F",
+					"event": "pickup_drop",
+					"when": "always"
+				}
+			]
+		},
+		{
+			"type": "distance",
+			"conditions": [{
+					"clause": "total_distance",
+					"operator": "less_than",
+					"value": 90
+				},
+				{
+					"clause": "inbetween_distance",
+					"operator": "less_than",
+					"value": 5
+				}
+			]
+		},
+		{
+			"type": "time",
+			"conditions": [{
+					"clause": "total_time",
+					"operator": "less_than",
+					"value": 90
+				},
+				{
+					"clause": "inbetween_time",
+					"operator": "less_than",
+					"value": 15
+				}
+			]
+		}
+	]
+}

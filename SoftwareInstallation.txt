@@ -1,0 +1,303 @@
+# after initialization
+perform follwing task
+step 1 -
+  create role example - admin
+step 2 -
+  create city default as MH with Mumbai
+step 3 -
+  create operation Location like Goregaon Wework
+step 4 -
+  create UserLocationCustomer
+  otherwise u can not create contract
+  beacause every contract should related with some
+  employee and their operation location
+step 5 -
+  Login into the system.
+++++++++++++++++++++++++++++++++++++++++++++++
+encrypted field creation
+1-pip3 install django-encrypted-model-fields
+2-python3 manage.py generate_encryption_key
+3-FIELD_ENCRYPTION_KEY = key value from above step
+
+++++++++++++++++++++++++++++++++++++++++++++++
+CREATE TABLE `location_invoice_header_location` (
+  `locationid` int(11) NOT NULL AUTO_INCREMENT,
+  `custname` varchar(50) NOT NULL,
+  `loccode` varchar(7) NOT NULL,
+  `gstin_no` varchar(15) NOT NULL,
+  `pan_no` varchar(10) NOT NULL,
+  `locaddress` longtext NOT NULL,
+  `created` datetime(6) NOT NULL,
+  `createdby` varchar(20) NOT NULL,
+  `updated` datetime(6) NOT NULL,
+  `updatedby` varchar(20) NOT NULL,
+  `loccity_id` int(11) NOT NULL,
+  `locstate_id` int(11) NOT NULL,
+  PRIMARY KEY (`locationid`),
+  KEY `location_invoice_hea_loccity_id_478a96fb_fk_location_` (`loccity_id`),
+  KEY `location_invoice_hea_locstate_id_bc63c5b1_fk_location_` (`locstate_id`),
+  CONSTRAINT `location_invoice_hea_loccity_id_478a96fb_fk_location_` FOREIGN KEY (`loccity_id`) REFERENCES `location_city` (`cityid`),
+  CONSTRAINT `location_invoice_hea_locstate_id_bc63c5b1_fk_location_` FOREIGN KEY (`locstate_id`) REFERENCES `location_state` (`stateid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+++++++++++++++++++++++++++++++++++++++++++++++
+#Python 3.6
+#Django 2.0
+#pip3
+
+Mysql Installation version 5.7
+
+1 - sudo apt-get install mysql-server
+2 - sudo mysql_secure_installtion
+pwd - rootgivenpassword
+
+3 - sudo apt-get install python3-dev
+4 - sudo apt-get install python3-dev libmysqlclient-dev
+5 - pip3 install mysqlclient
+6 - ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+ISCM
+Application ID:
+f3bd2cf0-1ab6-4686-af39-d8afdc3684d0
+
+Authorization Endpoint
+https://login.microsoftonline.com/8c4858b5-f020-483a-b7ef-71ded6e81767/oauth2/authorize
+
+##############################TEST#######################################
+// Line breaks for legibility only
+
+https://login.microsoftonline.com/{tenant}/oauth2/authorize?
+
+https://login.microsoftonline.com/8c4858b5-f020-483a-b7ef-71ded6e81767/oauth2/authorize?
+client_id=f3bd2cf0-1ab6-4686-af39-d8afdc3684d0
+&response_type=code
+&redirect_uri=http%3A%2F%2Flocalhost%3A12345
+&response_mode=query
+&resource=https%3A%2F%2Fservice.contoso.com%2F
+&state=12345
+
+
+###########################################################
+curl -X POST -d "grant_type=password&username=<user_name>&password=<password>" -u"<client_id>:<client_secret>" http://localhost:8000/o/token/
+
+curl -X POST -d "grant_type=password&username=admin&password=admin" -u"yvYEEKRqOX5oP2RI7ElajMecMUrL7jWEX7rzU00c:nR72xxTzkgZCzuADllVBaJzMYAnCn85o0Q0xagG3BtlEauMXeRR1gwUMuMAzIpQVHbKCUxoH9H7iXgvcU1BIX1Yag1ddxHDXzKy0dJBDwwkI6IGm0ZbtAnXrU75IYIo3" http://localhost:8000/o/token/
+
+
+curl -X POST -d "grant_type=password&username=rohit&password=rohit@1234" -u"yvYEEKRqOX5oP2RI7ElajMecMUrL7jWEX7rzU00c:nR72xxTzkgZCzuADllVBaJzMYAnCn85o0Q0xagG3BtlEauMXeRR1gwUMuMAzIpQVHbKCUxoH9H7iXgvcU1BIX1Yag1ddxHDXzKy0dJBDwwkI6IGm0ZbtAnXrU75IYIo3" http://localhost:8000/o/token/
+
+{"access_token": "XKmilgi2Ba5fNg22CdCoRkCAfJtRW8",
+"expires_in": 36000,
+"token_type": "Bearer",
+"scope": "read write groups",
+"refresh_token": "UfvKTRDfru6kLkzFGMm4vv0V2vHPXv"}
+
+{"access_token": "EIlvHRpjsiifmG5WJqOKfogSrCtGl6",
+"expires_in": 36000,
+"token_type": "Bearer",
+"scope": "read write groups",
+"refresh_token": "JqKV8Q9vHGKnlkhYtrykfBh42hS6Fd"}
+
+curl -X GET http://127.0.0.1:8000/api/contract/ -H 'Authorization: Token dccbb9c40ae1615bf2586137854fee299bf97135'
+
+curl -H "Authorization: Bearer EIlvHRpjsiifmG5WJqOKfogSrCtGl6" http://localhost:8000/api/contract/
+
+###############################################################
+move to path -- /usr/local/src/projects/ISCM/iscm/
+git init
+git add .
+git config --global user.email "25004740@mahindra.com"
+git config --global user.name "Deepak Singh"
+git commit -am 'First Commit'
+git status
+git log
+#git remote add origin https://inspector007@bitbucket.org/inspector007/iscm.git
+git remote add origin https://25004740@bitbucket.org/iscmteam/iscm.git
+
+
+git push https://25004740@bitbucket.org/25004740/iscm.git --force
+
+Password - deep@1234
+-------
+git remote rm origin
+git remote -v
+
+gs git status
+gd git
+ga git add
+
+git remote -v
+git fetch
+git commit -m "FIxed URL"
+git push origin master
+git show 6823f44c755ffe98cb76ad1dee7a702a943b711f
+gco -b search_api
+git checkout -b search_api
+git branch
+
+#########################################
+gb (git Branch)
+gco branchname (move current branch to other branch)
+gs (git status)
+ga num1 num2 num3 numN
+git rm -r 4 (remove added file from git repository)
+git commit -m "contract model changes"
+git push origin search_api (push commmited code to search_api branch)
+gco master (from search_api to master)
+git pull origin master (check master)
+git merge search_api (add search_api branch to master)
+git push origin master (commit to master branch)
+##########################################
+python3 -m virtualenv enviscm
+
+Udemy@123
+
+ng serve --port 3300
+
+OpportunityList
+
+address
+10.6.81.40-50
+network
+255.255.254.0
+gateway
+10.6.80.1
+dns
+10.2.156.35
+
+ssh projectuser@10.175.2.29
+pwd - P@ssword,123
+
+pass,123
+
+10.175.2.29:5000/login
+username - admin@gmail.com
+password - Newuser@123
+
+{
+    "status": "success",
+    "message": "",
+    "data": {
+        "authToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3Y2ZmYWU2Zjk3ZDU4NDQ2OGYyMDRiOWYzOGVkOWE5NCIsImlhdCI6MTU1NzI5Nzc2NiwiZXhwIjoxNTU3MzAxMzY2fQ.QhIBXyjfhDZq9DV92VibGo2hWbIOe2AGGt22sE2IfYgkv5dUfDFXvDsXt33JvNKMl3R-kwruT3gTtiIpUgpv5DoHu_JXFc1wXEELDdnlsKX8Zk3wzdu2Qr0YVwQAdUQGhnnrt5rbT_2jZMgrdvNH33oYsGtZpbJL0Z-l7kStqBU",
+        "userId": "7cffae6f97d584468f204b9f38ed9a94",
+        "baId": "2b547a8c20567653ab5761756e60e5a9"
+    },
+    "error": []
+}
+
+sudo code --user-data-dir="~/.vscode-root"
+
+23280720445728
+
+
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal.pem ec2-user@13.235.45.209
+
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal.pem ec2-user@13.234.117.242
+
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal.pem ec2-user@13.235.19.252
+
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal.pem ec2-user@13.127.241.1
+
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal.pem ec2-user@13.126.117.178
+
+
+19.7515
+
+75.7139
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
+strOpplink = "http://103.81.89.7/cashAPI/api/APIOpportunityDetails?Opp_id={0}&ApiKey=superapi00000"
+#strOpplink = "http://172.32.1.180/cashAPI/api/APIOpportunityDetails?Opp_id={0}&ApiKey=superapi00000"
+
+'NAME': 'iscmdb3',
+'USER': 'root',
+'PASSWORD': 'rootgivenpassword',
+'PASSWORD': 'baportalroot',
+
+
+Zsj0+CkJJck1e8fwe1L20Zxpu1pbsnWu/7V16dHBdEir63N6tiiU4ozRi3qBGd6ZBeZaS1EL8bkvtOML6tT1xw==
+
+
+1.To get vendorIds and Names:
+
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getVendorIDNames
+
+2.To get siteIds and Names:
+
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getSiteIDNames
+
+3.To get attendance details based on vendor and site ids which comes from above 2 apis:
+
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getRecordSiteVendor?vendor=11003793089993264601&siteId=137564986408694976&startDate=01-05-2019&endDate=12-08-2019
+
+
+*********************************************************************************************************
+
+Amazon HB FC Chennai - SMAB
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getRecordSiteVendor?vendor=10178163594610587744&siteId=16252173452509896464&startDate=05-08-2019&endDate=09-09-2019
+
+
+
+Control Tower-Cochin
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getRecordSiteVendor?vendor=14717317141858447095&siteId=12453314582980232158&startDate=05-08-2019&endDate=09-09-2019
+
+Amazon Sort Center Dankuni - CCUY
+https://portal.betterplace.co.in/VishwasAPI/api/Attendance/getRecordSiteVendor?vendor=5103454487082407440&siteId=8539623153721565772&startDate=05-08-2019&endDate=09-09-2019
+
+
+
+*****************************************************************************************************
+
+
+For all this apis in header we need to provide apiKey of that Organization to get response.
+
+"siteId": "137564986408694976",
+"siteName": "Hindustan Unilever Ltd"
+
+
+
+***************************************************
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
+
+
+******************************************************
+
+sudo ssh -i /home/administrator/vaayu-pyhton.pem ec2-user@ec2-13-126-252-158.ap-south-1.compute.amazonaws.com
+
+old
+ssh -i /home/administrator/dev/MLL_pem/Vaayu-python.pem ubuntu@13.127.68.152
+
+old
+ssh -i /home/administrator/dev/MLL_pem/Vaayu-python.pem ubuntu@ec2-13-235-247-109.ap-south-1.compute.amazonaws.com
+
+old
+ssh -i /home/administrator/dev/MLL_pem/Vaayu-python.pem ubuntu@ec2-13-235-9-215.ap-south-1.compute.amazonaws.com
+
+new
+ssh -i /home/administrator/dev/MLL_pem/Vaayu-python.pem ubuntu@ec2-3-6-56-181.ap-south-1.compute.amazonaws.com
+
+old
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal_new.pem ec2-user@13.126.117.178
+
+old 
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal_new.pem ec2-user@13.232.74.130
+
+new
+ssh -i /home/administrator/dev/MLL_pem/mllBAPortal_new.pem ec2-user@13.235.195.93
+
+sudo docker-compose up --build -d
+
+
+
+
+aadhar no - 992258045316
+A/C no - 1004631010002979
+Uttar Bihar Gramin bank
+Pin Code - 844121
+IFSC Code - CBINOR1001
+
+

@@ -1,0 +1,214 @@
+
+
+# contracttype
+[
+	
+	{
+		"models" : "contract.contracttype",
+	    "fields" : {
+	        "contracttypeid": 1,
+	        "cnttypename": "ManPower",
+	        "cnttypecode": "MNP"
+	    }
+	},
+	{
+		"models" : "contract.contracttype",
+	    "fields" : {
+	        "contracttypeid": 2,
+	        "cnttypename": "Fixed Price",
+	        "cnttypecode": "FXP"
+	    }
+	},
+	{
+		"models" : "contract.contracttype",
+	    "fields" : {
+	        "contracttypeid": 3,
+	        "cnttypename": "OUTPUT based Pricing",
+	        "cnttypecode": "OBPR"
+	    }
+	}
+]
+
+# Get KPI
+
+GET -->> /api/kpi/
+
+
+# Get kpidetail 
+
+GET -->> /api/getkpidetail/{contractid}/
+
+# Insert KPI Detail
+
+POST -->>/api/dailykpicapt/
+
+{
+"contractid": "nocustcode-MLL-2019-06-26-091644",
+"kpidetaillist" : [
+  {
+  	"kpi": "prodcompl",
+  	"uom": "percentage",
+  	"target1": 0
+	},
+	{
+  	"kpi": "prodcompl",
+  	"uom": "percentage",
+  	"target1": 0
+	}
+	]
+}
+
+# getdailykpi
+
+GET - >> /api/getdailykpidetail/{contractid}/{date_att}/
+
+#Insert dailykpilist
+
+POST - >> /api/dailykpicapt/
+
+{
+"contractid": "nocustcode-MLL-2019-06-26-091644",
+"dailykpilist":[
+	{
+	  "date": "2019-06-26",
+	  "kpiid": "prodcompl",
+	  "actualcount": 30
+	}
+	]
+}
+
+
+# condetailcapt
+
+{
+   "contractid":"nocustcode-MLL-2019-07-07-062223",
+   "condetaillist":	[
+    {
+        "contractdetid": 1,
+        "requirequantity": null,
+        "contract": "nocustcode-MLL-2019-07-07-062223",
+        "contacttype": 1,
+        "skilllevel": 1,
+        "designation": 1,
+        "startquantity": 10,
+        "endquantity": 20,
+        "uom": null,
+        "upperdev": null,
+        "lowerdev": null,
+        "ratetype": 1,
+        "fixedcost": 100,
+        "margintype": "",
+        "marginvalue": 10,
+        "isapplicablecomrange": null,
+        "billingcycle": null,
+        "finalsubmissionflag": null,
+        "remark": null
+    },
+    {
+        "contractdetid": 2,
+        "requirequantity": 0,
+        "contract": "nocustcode-MLL-2019-07-07-062223",
+        "contacttype": 1,
+        "skilllevel": 1,
+        "designation": 1,
+        "startquantity": 0,
+        "endquantity": 0,
+        "uom": "Day",
+        "upperdev": 0.0,
+        "lowerdev": 0.0,
+        "ratetype": 1,
+        "fixedcost": 0.0,
+        "margintype": "",
+        "marginvalue": 0.0,
+        "isapplicablecomrange": 0,
+        "billingcycle": "",
+        "finalsubmissionflag": 0,
+        "remark": "hi"
+    }
+]
+}
+
+
+
+######################
+import numpy as np
+
+
+L=[
+  {
+    "contacttype": 3,
+    "skilllevel": 7,
+    "startquantity": 0,
+    "endquantity": 250,
+    "fixedcost": 100,
+    
+  },
+  {
+    
+    "contacttype": 3,
+    "skilllevel": 7,
+    "startquantity": 251,
+    "endquantity": 500,
+    "fixedcost": 90,
+    
+  },
+  {
+    
+    "contacttype": 3,
+    "skilllevel": 7,
+    "startquantity": 501,
+    "endquantity": 1000,
+    "fixedcost": 80,
+    
+  }
+]
+
+# print(L[2])
+mn=[]
+mx=[]
+cost=[]
+
+for d in L:
+	mn.append(d['startquantity'])
+	mx.append(d['endquantity'])
+	cost.append(d['fixedcost'])
+
+
+inp=1001
+tot_cost=0
+
+for i,j,c in zip(mx,mn,cost):
+	if(inp>=i):
+		tot_cost=tot_cost+(i-j)*c
+		print(tot_cost,"if")
+
+	else:
+		tot_cost=tot_cost+(inp-j+1)*c
+		print(tot_cost,"else")
+		# print(j)
+		break
+
+
+print(tot_cost)
+# print(mn)
+# print(mx)
+
+#--- Sql Delete data
+
+SELECT * FROM iscmdb.contract_contract;
+
+delete FROM iscmdb.contract_detailattcapture;
+
+delete FROM iscmdb.contract_contractdetail;
+
+delete FROM iscmdb.contract_kpidetail;
+
+delete FROM iscmdb.contract_kpifrequency;
+
+delete FROM iscmdb.contract_capture_daily_kpi;
+
+delete FROM iscmdb.contract_invoiceutility;
+
+delete FROM iscmdb.contract_contract where contractwith='1';
+
+delete from iscmdb.contract_contract;

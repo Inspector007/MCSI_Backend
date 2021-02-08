@@ -1,0 +1,360 @@
+{
+    "data": {
+        "organization": "Mahindra Logistics",
+        "listofVendors": [
+            {
+                "vendorId": "10018207454192178002",
+                "vendorName": "Atharva Auto Logistics Pvt Ltd"
+            },
+            {
+                "vendorId": "13682211449329758337",
+                "vendorName": "Transfer"
+            },
+            {
+                "vendorId": "6603828625281421761",
+                "vendorName": "Sparrow"
+            },
+            {
+                "vendorId": "15286811835278107117",
+                "vendorName": "JAIGANESH"
+            },
+            {
+                "vendorId": "17671382454449573988",
+                "vendorName": "Manfriday Integrated Services"
+            },
+            {
+                "vendorId": "2534996773044524543",
+                "vendorName": "IEMS"
+            },
+            {
+                "vendorId": "12789161490402299494",
+                "vendorName": "Security & Intelligence Service India Ltd"
+            },
+            {
+                "vendorId": "14468442863681688339",
+                "vendorName": "Manikanta Enterprises"
+            },
+            {
+                "vendorId": "1558553969814327361",
+                "vendorName": "VIRAJ"
+            },
+            {
+                "vendorId": "6521771776848207284",
+                "vendorName": "Sant Dnyaneshwar Enterprises"
+            },
+            {
+                "vendorId": "11003793089993264601",
+                "vendorName": "STAR MANAGEMENT"
+            },
+            {
+                "vendorId": "9764659178210133255",
+                "vendorName": "YASHASWI ACADEMY FOR SKILLS"
+            },
+            {
+                "vendorId": "10405344470855014820",
+                "vendorName": "ADITYA ENTERPRISES"
+            },
+            {
+                "vendorId": "2349390291465201358",
+                "vendorName": "Atharv Associates"
+            },
+            {
+                "vendorId": "12603645458281432622",
+                "vendorName": "LTC Contractor"
+            },
+            {
+                "vendorId": "10178163594610587744",
+                "vendorName": "MK ENTERPRISES"
+            },
+            {
+                "vendorId": "13168965654405931810",
+                "vendorName": "AMS Express Services PVT LTD"
+            },
+            {
+                "vendorId": "8513433250942489912",
+                "vendorName": "KUNAL"
+            },
+            {
+                "vendorId": "12674428479722302451",
+                "vendorName": "KUNDLAS ENTERPRISES"
+            },
+            {
+                "vendorId": "3758914478782794974",
+                "vendorName": "LDS Guarding Solutions Pvt Ltd"
+            },
+            {
+                "vendorId": "18125856770085844432",
+                "vendorName": "Shiv enterprises"
+            },
+            {
+                "vendorId": "13626328577181704351",
+                "vendorName": "STAFCON SERVICES LLP"
+            },
+            {
+                "vendorId": "7009227830076309076",
+                "vendorName": "VAISHNAVI"
+            },
+            {
+                "vendorId": "4687067906105355660",
+                "vendorName": "Geekay Security"
+            },
+            {
+                "vendorId": "7028163197276557801",
+                "vendorName": "Shreenivas Ent"
+            },
+            {
+                "vendorId": "9555834956803983159",
+                "vendorName": "Mahindra Logistics Ltd"
+            },
+            {
+                "vendorId": "18297101757651399938",
+                "vendorName": "Degain"
+            },
+            {
+                "vendorId": "6650565675913219334",
+                "vendorName": "SINDHU ENTERPRISES"
+            },
+            {
+                "vendorId": "17384244460497117841",
+                "vendorName": "Hardevs Labour Supply Services"
+            },
+            {
+                "vendorId": "7637437064536380906",
+                "vendorName": "Nova Security Services Pvt. Ltd."
+            },
+            {
+                "vendorId": "5103454487082407440",
+                "vendorName": "BIS"
+            },
+            {
+                "vendorId": "16983828985389287628",
+                "vendorName": "Distinct Group of Companies"
+            },
+            {
+                "vendorId": "5969321193564678517",
+                "vendorName": "RLO"
+            },
+            {
+                "vendorId": "7663168253555519824",
+                "vendorName": "Service Master Clean Pvt Ltd"
+            },
+            {
+                "vendorId": "12461589411815452382",
+                "vendorName": "K and C"
+            },
+            {
+                "vendorId": "5155621840363114258",
+                "vendorName": "SunSine"
+            },
+            {
+                "vendorId": "18446103077174792325",
+                "vendorName": "BOSS MANAGEMENT"
+            },
+            {
+                "vendorId": "9092781229445271437",
+                "vendorName": "Bluestar Security & Facility Services"
+            },
+            {
+                "vendorId": "15839469783314136159",
+                "vendorName": "SHUBHLABH"
+            },
+            {
+                "vendorId": "8251437244656542775",
+                "vendorName": "Mohite Enterprises"
+            },
+            {
+                "vendorId": "5098586393340492502",
+                "vendorName": "Techno Manpower Service"
+            },
+            {
+                "vendorId": "6491965708218983932",
+                "vendorName": "TMS Management Services Pvt. Ltd"
+            },
+            {
+                "vendorId": "16078286802306959368",
+                "vendorName": "SAINI PLACEMENT AND SECURITY SERVICES"
+            },
+            {
+                "vendorId": "9461875489352959196",
+                "vendorName": "Pragathi Manpower services Ltd"
+            },
+            {
+                "vendorId": "6017237289273798299",
+                "vendorName": "CROWN SECURITY AGENCY"
+            },
+            {
+                "vendorId": "16474266455725030552",
+                "vendorName": "KLTS"
+            },
+            {
+                "vendorId": "11325753452076979633",
+                "vendorName": "SUPER SHINE SERVICES PVT LTD"
+            },
+            {
+                "vendorId": "6539541699285615166",
+                "vendorName": "SHIV SHAKTI ENTERPRISES"
+            },
+            {
+                "vendorId": "14814666645264721105",
+                "vendorName": "Guardwell prime services"
+            },
+            {
+                "vendorId": "2093414172453056961",
+                "vendorName": "ANVITA"
+            },
+            {
+                "vendorId": "8105563020023758659",
+                "vendorName": "Patle Eduskills Foundations"
+            },
+            {
+                "vendorId": "8499747975854507442",
+                "vendorName": "Area Wide Security Services"
+            },
+            {
+                "vendorId": "9775696193418625331",
+                "vendorName": "Sahyadri Security Services"
+            },
+            {
+                "vendorId": "12932779213771723266",
+                "vendorName": "PRANAV"
+            },
+            {
+                "vendorId": "4014444383785537291",
+                "vendorName": "RADIX HR SOLUTIONS"
+            },
+            {
+                "vendorId": "1880283059025165521",
+                "vendorName": "Sai Shraddha"
+            },
+            {
+                "vendorId": "4200741208878176513",
+                "vendorName": "ASTHA SERVICES"
+            },
+            {
+                "vendorId": "10917621748916638181",
+                "vendorName": "BSA"
+            },
+            {
+                "vendorId": "15956700832968869102",
+                "vendorName": "SHRI GANESH"
+            },
+            {
+                "vendorId": "8948658150264197247",
+                "vendorName": "Buzzworks Business Service private limited"
+            },
+            {
+                "vendorId": "5737788838650709639",
+                "vendorName": "Shree Radha Associates"
+            },
+            {
+                "vendorId": "8878312883728231759",
+                "vendorName": "Tirumala"
+            },
+            {
+                "vendorId": "5560133723897257712",
+                "vendorName": "Nisa Industrial Services Pvt Ltd"
+            },
+            {
+                "vendorId": "14717317141858447095",
+                "vendorName": "Grey Matter"
+            },
+            {
+                "vendorId": "9405354581370972948",
+                "vendorName": "Global Connect"
+            },
+            {
+                "vendorId": "17726349528160296251",
+                "vendorName": "Sunrise Enterprises"
+            },
+            {
+                "vendorId": "14816059230626641997",
+                "vendorName": "Ratna Services"
+            },
+            {
+                "vendorId": "10612841873608203378",
+                "vendorName": "A-1 Safety & Protection Security Services"
+            },
+            {
+                "vendorId": "173146973839645088",
+                "vendorName": "IMS"
+            },
+            {
+                "vendorId": "11432249340504617081",
+                "vendorName": "Santkrupa Enterprises"
+            },
+            {
+                "vendorId": "2709581002022938233",
+                "vendorName": "Prompt Personnel Consultancy"
+            },
+            {
+                "vendorId": "18307110383154205485",
+                "vendorName": "Total Manpower Servic e"
+            },
+            {
+                "vendorId": "9760428476437478671",
+                "vendorName": "R B ENTERPRISES"
+            },
+            {
+                "vendorId": "238237776662745559",
+                "vendorName": "S K Enterprises"
+            },
+            {
+                "vendorId": "12878444139174546557",
+                "vendorName": "MAGNUM"
+            },
+            {
+                "vendorId": "5567740976195256581",
+                "vendorName": "Yuvashakti Foundation (YSF )"
+            },
+            {
+                "vendorId": "2717965940024068542",
+                "vendorName": "PSN SUPPLY CHAIN SOLUTIONS PRIVATE LIMITED"
+            },
+            {
+                "vendorId": "11197660574865808267",
+                "vendorName": "Top Facility Management"
+            },
+            {
+                "vendorId": "5152673532933871884",
+                "vendorName": "JS Construction"
+            },
+            {
+                "vendorId": "892657315774902676",
+                "vendorName": "Novho consultancy"
+            },
+            {
+                "vendorId": "12448273826711673864",
+                "vendorName": "G SQUARE"
+            },
+            {
+                "vendorId": "6253053274554341030",
+                "vendorName": "Kavita Facility Management Pvt. Ltd."
+            },
+            {
+                "vendorId": "17684477430737554050",
+                "vendorName": "GAYATRI INVESTIGATION"
+            },
+            {
+                "vendorId": "10421640193942217424",
+                "vendorName": "ALWAR DETECTIVE and ESSENTIAL SERVICE ENTERPRISES"
+            },
+            {
+                "vendorId": "7868010340043471474",
+                "vendorName": "CASAGRAND PROPCARE"
+            },
+            {
+                "vendorId": "9373087613095687009",
+                "vendorName": "Friends Enterprise"
+            },
+            {
+                "vendorId": "12657135962708909474",
+                "vendorName": "Tiwari Enterprises"
+            },
+            {
+                "vendorId": "18249565254433785647",
+                "vendorName": "Modern security Force"
+            }
+        ]
+    },
+    "messages": []
+}
